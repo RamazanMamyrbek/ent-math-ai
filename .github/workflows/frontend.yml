@@ -42,9 +42,9 @@ jobs:
     - name: Start Backend
       run: |
         cd backend
-        ./mvnw spring-boot:run &
+        mvn spring-boot:run &
         # Wait for backend to be ready
-        timeout 60 bash -c 'while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:8080/actuator/health)" != "200" ]]; do sleep 2; done' || false
+        timeout 300 bash -c 'while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:8080/actuator/health)" != "200" ]]; do sleep 2; done' || false
         
     - name: Use Node.js
       uses: actions/setup-node@v4
