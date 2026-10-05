@@ -1,0 +1,27 @@
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Build
+/backend/target/
+/frontend/.next/
+/frontend/out/
+/frontend/build/
+
+# Node
+node_modules/
+
+# Environment
+.env
+
+# Logs
+*.log
+/logs/
+
+# Mac
+.DS_Store
+
+# Data
+minio-data/
+postgres-data/
