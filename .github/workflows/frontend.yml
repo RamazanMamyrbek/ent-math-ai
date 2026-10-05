@@ -40,6 +40,10 @@ jobs:
         cache: maven
         
     - name: Start Backend
+      env:
+        SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/entmath_db
+        SPRING_DATASOURCE_USERNAME: entmath_user
+        SPRING_DATASOURCE_PASSWORD: entmath_password
       run: |
         cd backend
         mvn spring-boot:run &
