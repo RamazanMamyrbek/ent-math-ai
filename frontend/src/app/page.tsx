@@ -2,8 +2,13 @@
 
 import { useEffect, useState } from "react";
 
+interface SystemStatus {
+  status: string;
+  database: string;
+}
+
 export default function Home() {
-  const [status, setStatus] = useState<any>(null);
+  const [status, setStatus] = useState<SystemStatus | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
