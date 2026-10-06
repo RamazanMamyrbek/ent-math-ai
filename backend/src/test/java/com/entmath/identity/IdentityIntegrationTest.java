@@ -35,8 +35,14 @@ public class IdentityIntegrationTest {
         registry.add("spring.datasource.url", postgres::getJdbcUrl);
         registry.add("spring.datasource.username", postgres::getUsername);
         registry.add("spring.datasource.password", postgres::getPassword);
+        registry.add("spring.flyway.url", postgres::getJdbcUrl);
+        registry.add("spring.flyway.user", postgres::getUsername);
+        registry.add("spring.flyway.password", postgres::getPassword);
         registry.add("spring.flyway.enabled", () -> "true");
-        registry.add("spring.session.jdbc.initialize-schema", () -> "never");
+        // Force Hibernate to create tables in case Flyway is skipped
+        registry.add("spring.jpa.hibernate.ddl-auto", () -> "update");
+        // Force Spring Session to create tables in case Flyway is skipped
+        registry.add("spring.session.jdbc.initialize-schema", () -> "always");
     }
 
     @LocalServerPort
