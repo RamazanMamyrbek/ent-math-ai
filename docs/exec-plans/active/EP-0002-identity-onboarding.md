@@ -95,7 +95,7 @@ New tables: `user_account`, `student_profile`, `study_goal`, `spring_session`, `
 - [x] Domain & Config complete
 - [x] Backend API complete
 - [x] Frontend UI complete
-- [x] E2E Tests green
+- [ ] E2E Tests green
 
 ## Decisions
 - Spring Session uses PostgreSQL (default schema) created via Flyway.
@@ -104,5 +104,4 @@ New tables: `user_account`, `student_profile`, `study_goal`, `spring_session`, `
 - Email is normalized before saving.
 
 ## Final Verification
-Implementation is fully written. Awaiting CI (GitHub Actions) to verify tests and build.
-If CI passes, Phase 1 is done.
+Pending. Running integration tests and Playwright E2E tests.
