@@ -12,8 +12,10 @@ spring:
   session:
     store-type: jdbc
     jdbc:
-      initialize-schema: never
-
+      initialize-schema: always
+  jpa:
+    hibernate:
+      ddl-auto: update
 server:
   port: 8080
 

@@ -23,8 +23,11 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.springframework.test.context.jdbc.Sql;
+
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Testcontainers(disabledWithoutDocker = true)
+@Sql(scripts = "/db/migration/V2__identity_and_session_schema.sql", executionPhase = Sql.ExecutionPhase.BEFORE_TEST_CLASS)
 public class IdentityIntegrationTest {
 
     @Container

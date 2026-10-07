@@ -7,6 +7,7 @@ services:
       POSTGRES_DB: ${POSTGRES_DB:-ent_math_ai}
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      PGDATA: /var/lib/postgresql/data/pgdata
     ports:
       - "5432:5432"
     volumes:
